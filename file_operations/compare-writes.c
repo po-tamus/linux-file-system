@@ -1,17 +1,17 @@
-  edit 2
+//   edit 2
   /* I made an edit */ 
 
 /* use this code to compare times using the standard library vs POSIX 
 
 from: https://www.reddit.com/r/C_Programming/comments/ho8cxv/use_system_calls_or_standard_library_functions/
 
- */
+*/ 
 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <unistd.h>
+#include <unistd.h> 
 
 void do_syscall( size_t count, size_t size )
 {
@@ -19,6 +19,8 @@ void do_syscall( size_t count, size_t size )
     for (int i=0;i!=size;i++)
         buffer[i] = i%256;
     
+
+    // this uses a bitwise "or" for the permissions of the open
     int d = open( "data.raw", O_CREAT|O_WRONLY, 0666 );
     while (count--)
         write( d, buffer, size );
