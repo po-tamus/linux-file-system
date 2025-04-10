@@ -1,4 +1,10 @@
-// C program to write to a Binary file using fwrite()
+/**
+ * This program writes data to a binary file using fwrite() in the stdio.h library
+ * Since the "wb" flag is used, we are writing binary. 
+ * Additinally, if the file does not exist, it will be created. 
+ * The file is image.dat which is a binary file format for storing image data. 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
